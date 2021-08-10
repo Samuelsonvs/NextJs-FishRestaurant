@@ -45,7 +45,9 @@ export default function Container({
       </Head>
       <Navbar mounted={mounted} />
 
-      <main className="max-w-screen-3xl mx-auto bg-yellow-100">{children}</main>
+      <main className="max-w-screen-3xl mx-auto text-gray-600 bg-yellow-50">
+        {children}
+      </main>
       <footer>{/* <Footer /> */}</footer>
     </div>
   );

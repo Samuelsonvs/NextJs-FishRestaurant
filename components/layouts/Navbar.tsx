@@ -1,11 +1,11 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Transition } from "@headlessui/react";
 
 import { ThemeController } from "@/interfaces/interface";
 import SvgCreator from "@/components/SvgCreator";
-import Logo from "@/public/images/logo/orange1.png";
+import Logo from "@/public/images/logo/orange2.png";
 
 const navList = [
   { name: "Anasayfa", route: "/" },
@@ -16,50 +16,54 @@ const navList = [
 
 export default function Navbar({ mounted }: ThemeController): JSX.Element {
   const [isShowing, setIsShowing] = useState(false);
+
+  const [navbarChange, setNavbarChange] = useState(false);
+
+  console.log(navbarChange);
+
+  useEffect(() => {
+    const changeNavbar = () => {
+      if (window.scrollY >= 100) {
+        setNavbarChange(true);
+      } else {
+        setNavbarChange(false);
+      }
+    };
+    window.addEventListener("scroll", changeNavbar);
+    return () => removeEventListener("scroll", changeNavbar);
+  }, []);
   return (
-    <header className="sticky top-0 z-20 font-playfair bg-yellow-100 bg-opacity-50 transition ease-in backdrop-filter backdrop-blur-lg backdrop-saturate-150 mx-auto">
+    <header
+      className={`sticky ${
+        navbarChange ? "" : "sm:h-20"
+      } bg-yellow-50 transform duration-200 top-0 z-20 font-playfair bg-opacity-50 transition ease-in backdrop-filter backdrop-blur-lg backdrop-saturate-150 mx-auto`}
+    >
       <nav
-        className={`bg-white ${
-          !isShowing ? " bg-opacity-50" : ""
-        } flex sm:items-center justify-center sm:justify-evenly py-2`}
+        className={`flex flex-row ${
+          navbarChange
+            ? "sm:justify-between"
+            : "sm:justify-evenly sm:flex-col sm:items-center"
+        }  justify-center py-2`}
       >
-        <div className="hidden sm:block mt-5 sm:mt-0">
-          <ul className="flex text-yellow-600">
-            <li className="button-active-effect">
-              <Link href={navList[0].route} passHref scroll={false}>
-                <a className="hover:bg-gray-100 focus:bg-gray-100 px-3 py-2 rounded-md text-2xl font-semibold">
-                  {navList[0].name}
-                </a>
-              </Link>
-            </li>
-            <li className="button-active-effect">
-              <Link href={navList[1].route} passHref scroll={false}>
-                <a className="hover:bg-gray-100 focus:bg-gray-100 px-3 py-2 rounded-md text-2xl font-semibold">
-                  {navList[1].name}
-                </a>
-              </Link>
-            </li>
-          </ul>
+        <div className="hidden sm:block">
+          <Image src={Logo} width={300} height={115} alt={"Site-logo"} />
         </div>
-        <div>
-          <Image src={Logo} width={130} height={61} alt={"Site-logo"} />
+        <div className="block sm:hidden">
+          <Image src={Logo} width={200} height={77} alt={"Site-logo"} />
         </div>
-        <div className="hidden sm:block mt-5 sm:mt-0">
-          <ul className="flex text-yellow-600">
-            <li className="button-active-effect">
-              <Link href={navList[2].route} passHref scroll={false}>
-                <a className="hover:bg-gray-100 focus:bg-gray-100 px-3 py-2 rounded-md text-2xl font-semibold">
-                  {navList[2].name}
-                </a>
-              </Link>
-            </li>
-            <li className="button-active-effect">
-              <Link href={navList[3].route} passHref scroll={false}>
-                <a className="hover:bg-gray-100  focus:bg-gray-100 px-3 py-2 rounded-md text-2xl font-semibold">
-                  {navList[3].name}
-                </a>
-              </Link>
-            </li>
+        <div className="hidden sm:block mt-7 sm:mb-14 w-full">
+          <ul className="flex text-gray-200 justify-evenly">
+            {navList.map((item, idx) => {
+              return (
+                <li key={idx} className="button-active-effect">
+                  <Link href={item.route} passHref scroll={false}>
+                    <a className="hover:bg-gray-100 focus:bg-gray-100 transition ease-in-out duration-200 hover:text-yellow-600 px-3 py-2 rounded-md text-2xl">
+                      {item.name}
+                    </a>
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </div>
         {/* mobile  */}
@@ -93,7 +97,7 @@ export default function Navbar({ mounted }: ThemeController): JSX.Element {
               ))}
           </button>
           <Transition
-            className="absolute top-0 right-0 left-0 -bottom-10 rounded-md bg-yellow-100"
+            className="absolute top-24 right-0 left-0 -bottom-40 rounded-md bg-yellow-50"
             show={isShowing}
             enter="transition-opacity duration-150"
             enterFrom="opacity-0"
@@ -102,11 +106,11 @@ export default function Navbar({ mounted }: ThemeController): JSX.Element {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <ul className="h-full flex justify-evenly items-center shadow-2xl">
+            <ul className="h-full flex justify-evenly items-center">
               {navList.map((item) => (
                 <li key={item.name}>
                   <Link href={item.route} passHref scroll={false}>
-                    <a className="hover:bg-gray-100 focus:bg-gray-100  px-3 py-2 rounded-md text-sm font-medium">
+                    <a className="hover:bg-gray-100 focus:bg-gray-100  px-3 py-2 rounded-md text-sm sx:text-lg font-medium">
                       {item.name}
                     </a>
                   </Link>
