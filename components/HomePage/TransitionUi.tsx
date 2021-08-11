@@ -19,12 +19,12 @@ export default function TransitionUi({
     >
       <Transition.Child
         className="relative top-1/3 sm:text-5xl md:text-6xl lg:text-7xl"
-        enter="transition transform duration-700 ease-out"
+        enter="transition transform duration-700 ease-in"
         enterFrom="opacity-0 rotate-90 scale-50 -translate-y-10"
         enterTo="opacity-100 rotate-0 scale-100 translate-y-0"
-        leave="transition transform duration-300 ease-in"
-        leaveFrom="opacity-100"
-        leaveTo="opacity-0"
+        leave="transition transform duration-300 ease-out"
+        leaveFrom="opacity-100 scale-100"
+        leaveTo="opacity-0 scale-50"
       >
         <div className="border-2 border-collapse border-transparent border-opacity-50 border-yellow-200 bg-gray-700 bg-opacity-30 rounded inline px-2">
           {text}
@@ -32,12 +32,12 @@ export default function TransitionUi({
       </Transition.Child>
       <Transition.Child
         className="lg:mt-32 mt-10 relative top-1/3 sm:text-5xl md:text-6xl lg:text-7xl"
-        enter="transition transform duration-700 ease-out"
+        enter="transition transform duration-700 ease-in"
         enterFrom="opacity-0 -rotate-90 scale-50 -translate-y-10"
         enterTo="opacity-100 rotate-0 scale-100 translate-y-0"
-        leave="transition transform duration-300 ease-in"
-        leaveFrom="opacity-100"
-        leaveTo="opacity-0"
+        leave="transition transform duration-300 ease-out"
+        leaveFrom="opacity-100 scale-100"
+        leaveTo="opacity-0 scale-50"
       >
         <div className="border-2 border-collapse border-transparent border-opacity-50 border-yellow-200 bg-gray-700 bg-opacity-30 rounded inline px-2">
           {text}

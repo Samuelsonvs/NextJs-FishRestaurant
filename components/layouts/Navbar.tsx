@@ -19,8 +19,6 @@ export default function Navbar({ mounted }: ThemeController): JSX.Element {
 
   const [navbarChange, setNavbarChange] = useState(false);
 
-  console.log(navbarChange);
-
   useEffect(() => {
     const changeNavbar = () => {
       if (window.scrollY >= 100) {
