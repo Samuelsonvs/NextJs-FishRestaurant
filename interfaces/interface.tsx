@@ -10,3 +10,9 @@ export interface ContainerProps extends Children {
 export interface ThemeController {
   mounted: boolean;
 }
+
+export interface LightBoxConstant {
+  isOpen: boolean;
+  setIsOpen: Dispatch<SetStateAction<any>>;
+  lightboxData: any;
+}

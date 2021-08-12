@@ -79,6 +79,9 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <div className=" bg-red-500 h-36 max-w-screen-3xl w-full">
+          Continue AfterDay
+        </div>
         <div className="px-7 mx-auto mt-10">
           <div className="leading-8">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum

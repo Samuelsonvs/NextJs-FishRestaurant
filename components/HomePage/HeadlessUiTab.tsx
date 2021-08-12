@@ -1,10 +1,12 @@
-import { useState } from "react";
-import { Tab } from "@headlessui/react";
-import { Transition } from "@headlessui/react";
+import { useState, Fragment } from "react";
+import { Tab, Transition, Dialog } from "@headlessui/react";
 import Link from "next/link";
 import Image from "next/image";
 
-import MenuImage from "@/public/images/content/hamsiyePlate.png";
+import categories from "@/data/menuDatas.json";
+import LightBox from "./LightBox";
+import MenuBigItem1 from "@/public/images/menu/foodbig1.png";
+import MenuItem1 from "@/public/images/menu/foodthumb1.png";
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
@@ -12,58 +14,25 @@ function classNames(...classes: string[]) {
 
 export default function HeadlessUiTab() {
   const [activeTabNum, setActiveTabNum] = useState(0);
-  const [categories] = useState({
-    Recent: [
-      {
-        id: 1,
-        title: "Wedge Salad",
-        content: "Phasellus pulvinar fringilla sapien eu maximus...",
-        date: "5h ago",
-        commentCount: 5,
-        shareCount: 2,
-      },
-      {
-        id: 2,
-        title: "So you've bought coffee... now what?",
-        date: "2h ago",
-        commentCount: 3,
-        shareCount: 2,
-      },
-    ],
-    Popular: [
-      {
-        id: 1,
-        title: "Is tech making coffee better or worse?",
-        date: "Jan 7",
-        commentCount: 29,
-        shareCount: 16,
-      },
-      {
-        id: 2,
-        title:
-          "The most innovative things happening in coffeeThe most innovative things happening in coffee.",
-        date: "Mar 19",
-        commentCount: 24,
-        shareCount: 12,
-      },
-    ],
-    Trending: [
-      {
-        id: 1,
-        title: "Ask Me Anything: 10 answers to your questions about coffee",
-        date: "2d ago",
-        commentCount: 9,
-        shareCount: 5,
-      },
-      {
-        id: 2,
-        title: "The worst advice we've ever heard about coffee",
-        date: "4d ago",
-        commentCount: 1,
-        shareCount: 2,
-      },
-    ],
+  const [lightboxData, setLightboxData] = useState({
+    bigImage: "",
+    explanation: "",
+    title: "",
   });
+  const [isOpen, setIsOpen] = useState(false);
+
+  const dialogHandler = (
+    bigImage: string,
+    explanation: string,
+    title: string
+  ) => {
+    setIsOpen(true);
+    setLightboxData({
+      bigImage: bigImage,
+      explanation: explanation,
+      title: title,
+    });
+  };
 
   return (
     <div className="flex flex-col items-center mt-10">
@@ -74,7 +43,6 @@ export default function HeadlessUiTab() {
       >
         <Tab.List className="flex p-1 space-x-1 rounded-xl">
           {Object.keys(categories).map((category) => {
-            console.log(category);
             return (
               <Tab
                 key={category}
@@ -93,52 +61,50 @@ export default function HeadlessUiTab() {
             );
           })}
         </Tab.List>
-        <Tab.Panels className="mt-2">
+        <Tab.Panels className="mt-2 w-full">
           {Object.values(categories).map((posts, idx) => (
             <Transition
               key={idx}
               show={idx === activeTabNum ? true : false}
-              enter="transform transition duration-500 ease-in"
-              enterFrom="opacity-0 scale-95"
+              enter="transform transition duration-300 ease-in"
+              enterFrom="opacity-0 scale-90"
               enterTo="opacity-100 scale-100"
-              leave="transition transform duration-75 ease-out"
-              leaveFrom="opacity-100 scale-100"
-              leaveTo="opacity-0 scale-95"
             >
               <Tab.Panel
+                key={idx}
                 static
                 className={classNames(
                   "rounded-xl mt-10 p-3 transition duration-500 ease-in-out",
-                  "focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60"
+                  "focus:outline-none"
                 )}
               >
-                <ul className="flex flex-col sm:flex-row">
+                <ul className="w-full grid justify-items-center grid-flow-row sm:grid-cols-2 lg:grid-cols-3">
                   {posts.map((post) => (
                     <li
                       key={post.id}
-                      className="block p-3 rounded-md hover:bg-coolGray-100"
+                      className="block pb-10 pt-10 mt-10 w-60 rounded-md hover:bg-coolGray-100"
                     >
-                      <div className="border border-black">
-                        <Link href="/" passHref>
-                          <a className="-mt-20 mx-auto block border overflow-hidden rounded-full w-40 h-40">
-                            <Image
-                              layout="fixed"
-                              src={MenuImage}
-                              alt="images"
-                              width={165}
-                              height={165}
-                            />
-                          </a>
-                        </Link>
-                        <h3 className="text-sm font-medium leading-5">
+                      <div className="border-2 hover:bg-yellow-200 transition duration-300 ease-in-out border-yellow-200 border-opacity-60">
+                        <a
+                          onClick={() =>
+                            dialogHandler(
+                              post.bigImage,
+                              post.longExplanation,
+                              post.title
+                            )
+                          }
+                          className="relative cursor-pointer -mt-20 mx-auto block overflow-hidden rounded-full w-40 h-40"
+                        >
+                          <Image layout="fill" src={MenuItem1} alt="images" />
+                        </a>
+                        <h3 className="p-2 mt-3 text-2xl text-center font-playfair font-semibold leading-5">
                           {post.title}
                         </h3>
-                        <ul className="flex mt-1 space-x-1 text-xs font-normal leading-4 text-coolGray-500">
-                          <li>{post.date}</li>
-                          <li>&middot;</li>
-                          <li>{post.commentCount} comments</li>
-                          <li>&middot;</li>
-                          <li>{post.shareCount} shares</li>
+                        <ul className="mt-1 p-2 px-5 text-center space-x-1 leading-7">
+                          <li>{post.shortExplanation}</li>
+                          <li className="mt-5 font-serif font-semibold">
+                            {post.price}
+                          </li>
                         </ul>
                       </div>
                     </li>
@@ -149,6 +115,11 @@ export default function HeadlessUiTab() {
           ))}
         </Tab.Panels>
       </Tab.Group>
+      <LightBox
+        isOpen={isOpen}
+        lightboxData={lightboxData}
+        setIsOpen={setIsOpen}
+      />
     </div>
   );
 }
