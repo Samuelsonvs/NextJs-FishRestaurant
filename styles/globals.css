@@ -47,7 +47,7 @@ a {
 /*  Carousel css   */
 
 /* Slider */
-.slick-slider {
+/* .slick-slider {
   position: relative;
 
   display: block;
@@ -147,7 +147,7 @@ a {
 }
 .slick-arrow.slick-hidden {
   display: none;
-}
+} */
 
 /* Slider */
 
@@ -155,7 +155,7 @@ a {
 @font-face {
 }
 /* Arrows */
-.slick-prev,
+/* .slick-prev,
 .slick-next {
   font-size: 0;
   line-height: 0;
@@ -237,10 +237,10 @@ a {
 }
 [dir="rtl"] .slick-next:before {
   content: "←";
-}
+} */
 
 /* Dots */
-.slick-dotted.slick-slider {
+/* .slick-dotted.slick-slider {
   margin-bottom: 30px;
 }
 
@@ -319,4 +319,4 @@ a {
 .slick-dots li.slick-active button:before {
   opacity: 0.75;
   color: black;
-}
+} */

@@ -2,14 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-interface MenuSvgIconsConstants {
-  svg: any;
-  head: string;
-  text: string;
-  aText: string;
-  href: string;
-  alt: string;
-}
+import { MenuSvgIconsConstants } from "@/interfaces/interface";
 
 export default function MenuSvgIconContents({
   svg,

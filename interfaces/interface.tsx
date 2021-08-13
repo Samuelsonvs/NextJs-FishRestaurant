@@ -16,3 +16,18 @@ export interface LightBoxConstant {
   setIsOpen: Dispatch<SetStateAction<any>>;
   lightboxData: any;
 }
+
+export interface MenuSvgIconsConstants {
+  svg: StaticImageData;
+  head: string;
+  text: string;
+  aText: string;
+  href: string;
+  alt: string;
+}
+
+export interface TransitionUiElem {
+  activeSlide: number;
+  num: number;
+  text: string;
+}

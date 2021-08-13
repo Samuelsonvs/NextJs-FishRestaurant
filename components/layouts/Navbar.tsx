@@ -16,6 +16,7 @@ const navList = [
 
 export default function Navbar({ mounted }: ThemeController): JSX.Element {
   const [isShowing, setIsShowing] = useState(false);
+  const [navListColor, setNavListColor] = useState("text-gray-200");
 
   const [navbarChange, setNavbarChange] = useState(false);
 
@@ -23,8 +24,10 @@ export default function Navbar({ mounted }: ThemeController): JSX.Element {
     const changeNavbar = () => {
       if (window.scrollY >= 100) {
         setNavbarChange(true);
+        setNavListColor("text-gray-600");
       } else {
         setNavbarChange(false);
+        setNavListColor("text-gray-200");
       }
     };
     window.addEventListener("scroll", changeNavbar);
@@ -39,7 +42,7 @@ export default function Navbar({ mounted }: ThemeController): JSX.Element {
       <nav
         className={`flex flex-row ${
           navbarChange
-            ? "sm:justify-between"
+            ? "sm:justify-between items-center"
             : "sm:justify-evenly sm:flex-col sm:items-center"
         }  justify-center py-2`}
       >
@@ -50,7 +53,7 @@ export default function Navbar({ mounted }: ThemeController): JSX.Element {
           <Image src={Logo} width={200} height={77} alt={"Site-logo"} />
         </div>
         <div className="hidden sm:block mt-7 sm:mb-14 w-full">
-          <ul className="flex text-gray-200 justify-evenly">
+          <ul className={`flex ${navListColor} justify-evenly`}>
             {navList.map((item, idx) => {
               return (
                 <li key={idx} className="button-active-effect">

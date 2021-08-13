@@ -1,10 +1,9 @@
 import { Dialog, Transition } from "@headlessui/react";
-import { Fragment, useState } from "react";
+import { Fragment } from "react";
 import Image from "next/image";
 
 import SvgCreator from "../SvgCreator";
 import { LightBoxConstant } from "@/interfaces/interface";
-import MenuBigItem1 from "@/public/images/menu/foodbig1.png";
 
 export default function LightBox({
   isOpen,

@@ -7,6 +7,8 @@ import TransitionUi from "./TransitionUi";
 import Image1 from "@/public/images/topslide/1.jpg";
 import Image2 from "@/public/images/topslide/2.jpg";
 import Image3 from "@/public/images/topslide/3.jpg";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 export default function ReactSlick() {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -16,6 +18,7 @@ export default function ReactSlick() {
     autoplay: true,
     fade: true,
     speed: 3000,
+    arrows: false,
     slidesToShow: 1,
     slidesToScroll: 1,
     beforeChange: (current: any, next: any) => setActiveSlide(next),
@@ -23,7 +26,7 @@ export default function ReactSlick() {
   };
   return (
     <div className="relative">
-      <Slider className="overflow-hidden bg-yellow-100" {...settings}>
+      <Slider className="bg-yellow-100" {...settings}>
         <div>
           <Image src={Image1} width={1920} height={1440} alt="slider-image" />
         </div>

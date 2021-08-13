@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import Navbar from "@/components/layouts/Navbar";
 import { ContainerProps } from "@/interfaces/interface";
+import Footer from "@/components/layouts/Footer";
 // import Footer from "@/components/layouts/Footer";
 
 export default function Container({
@@ -24,7 +25,7 @@ export default function Container({
   };
 
   return (
-    <div className="font-sans">
+    <div className="font-sans bg-yellow-50">
       <Head>
         <title>{meta.title}</title>
         <meta name="robots" content="follow, index" />
@@ -45,10 +46,10 @@ export default function Container({
       </Head>
       <Navbar mounted={mounted} />
 
-      <main className="max-w-screen-3xl mx-auto text-gray-600 bg-yellow-50">
-        {children}
-      </main>
-      <footer>{/* <Footer /> */}</footer>
+      <main className="max-w-screen-3xl mx-auto text-gray-600">{children}</main>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 }

@@ -1,11 +1,7 @@
 import React from "react";
 import { Transition } from "@headlessui/react";
 
-interface TransitionUiElem {
-  activeSlide: number;
-  num: number;
-  text: string;
-}
+import { TransitionUiElem } from "@/interfaces/interface";
 
 export default function TransitionUi({
   activeSlide,

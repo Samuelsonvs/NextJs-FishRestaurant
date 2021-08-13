@@ -18,11 +18,14 @@
     "prettier": "^2.3.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-slick": "^0.28.1"
+    "react-slick": "^0.28.1",
+    "simple-react-lightbox": "^3.6.6",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "@types/react": "17.0.16",
     "@types/react-slick": "^0.23.5",
+    "@types/simple-react-lightbox": "^3.6.1",
     "autoprefixer": "^10.3.1",
     "eslint": "7.32.0",
     "eslint-config-next": "11.0.1",

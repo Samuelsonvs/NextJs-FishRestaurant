@@ -1,12 +1,9 @@
-import { useState, Fragment } from "react";
-import { Tab, Transition, Dialog } from "@headlessui/react";
-import Link from "next/link";
+import { useState } from "react";
+import { Tab, Transition } from "@headlessui/react";
 import Image from "next/image";
 
 import categories from "@/data/menuDatas.json";
 import LightBox from "./LightBox";
-import MenuBigItem1 from "@/public/images/menu/foodbig1.png";
-import MenuItem1 from "@/public/images/menu/foodthumb1.png";
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
@@ -95,7 +92,11 @@ export default function HeadlessUiTab() {
                           }
                           className="relative cursor-pointer -mt-20 mx-auto block overflow-hidden rounded-full w-40 h-40"
                         >
-                          <Image layout="fill" src={MenuItem1} alt="images" />
+                          <Image
+                            layout="fill"
+                            src={post.thumbImage}
+                            alt="images"
+                          />
                         </a>
                         <h3 className="p-2 mt-3 text-2xl text-center font-playfair font-semibold leading-5">
                           {post.title}
