@@ -78,6 +78,7 @@ export default function LightBox({
                   alt="big-food-image"
                   width={568}
                   height={624}
+                  placeholder="blur"
                 />
               </div>
               <div className="mt-5">{lightboxData.explanation}</div>
