@@ -5,7 +5,7 @@ import Container from "@/container/Container";
 import ReactSlick from "@/components/HomePage/ReactSlick";
 import FacebookGoogleSlick from "@/components/HomePage/FacebookGoogleSlick";
 import HeadlessUiTab from "@/components/HomePage/HeadlessUiTab";
-import Welcome from "@/public/images/content/welcome.png";
+import Welcome from "@/public/images/content/welcome.jpg";
 import MenuImage from "@/public/images/content/hamsiyePlate.png";
 import MenuSvgIconContents from "@/components/HomePage/MenuSvgIconContents";
 import ServingDish from "@/public/svg/ServingDish.svg";
@@ -44,7 +44,7 @@ export default function Home() {
           </div>
           <div className="mt-40 flex flex-col md:flex-row justify-center items-center md:items-start">
             <div className="flex-shrink-0">
-              <Image width={480} height={640} src={Welcome} alt="welcome-img" />
+              <Image width={480} height={640} placeholder="blur" src={Welcome} alt="welcome-img" />
             </div>
             <div className="ml-5 mt-10 md:mt-0">
               <h3 className="text-4xl text-center font-playfair">
