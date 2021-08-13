@@ -82,7 +82,7 @@ export default function HeadlessUiTab() {
                       className="block pb-10 pt-10 mt-10 w-60 rounded-md hover:bg-coolGray-100"
                     >
                       <div className="border-2 hover:bg-yellow-200 transition duration-300 ease-in-out border-yellow-200 border-opacity-60">
-                        <a
+                        <button
                           onClick={() =>
                             dialogHandler(
                               post.bigImage,
@@ -96,8 +96,9 @@ export default function HeadlessUiTab() {
                             layout="fill"
                             src={post.thumbImage}
                             alt="images"
+                            priority
                           />
-                        </a>
+                        </button>
                         <h3 className="p-2 mt-3 text-2xl text-center font-playfair font-semibold leading-5">
                           {post.title}
                         </h3>

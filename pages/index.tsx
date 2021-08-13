@@ -73,6 +73,7 @@ export default function Home() {
                 height={270}
                 src={MenuImage}
                 alt="hamsiye-tabak"
+                priority
               />
             </div>
             <div>
