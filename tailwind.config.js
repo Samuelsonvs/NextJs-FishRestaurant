@@ -28,6 +28,7 @@ module.exports = {
     extend: {
       backgroundImage: (theme) => ({
         "plate-fish": "url(/images/content/orderfoodonline.jpg)",
+        "plate-fish-mobil":"url(/images/content/orderfoodonlinemobil.jpg)"
       }),
       screens: {
         "3xl": "1920px",

@@ -84,7 +84,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <BgImageBox />
+        {/* <BgImageBox /> */}
         <FacebookGoogleSlick />
         <Gallery />
         <GoogleMap />

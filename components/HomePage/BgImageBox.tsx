@@ -2,7 +2,7 @@ import React from "react";
 
 export default function BgImageBox() {
   return (
-    <div className="py-40 bg-plate-fish bg-cover bg-fixed bg-center relative">
+    <div className="py-14 sm:py-40 bg-plate-fish-mobil sm:bg-plate-fish transform translate-x-0 translate-y-0 bg-cover bg-fixed bg-center relative">
       <div className="max-w-xl lg:max-w-5xl mx-auto">
         <div className="px-3 text-center">
           <p className="text-4xl lg:text-6xl text-white leading-10 font-playfair">
