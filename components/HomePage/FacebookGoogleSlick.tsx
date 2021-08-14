@@ -70,7 +70,7 @@ export default function FacebookSlick() {
               quality={100}
               width={277}
               height={136}
-              placeholder="blur"
+              priority
             />
           </div>
           <div className="p-5">
@@ -80,7 +80,7 @@ export default function FacebookSlick() {
               quality={100}
               width={264}
               height={112}
-              placeholder="blur"
+              priority
             />
           </div>
           <div className="p-5">
@@ -90,7 +90,7 @@ export default function FacebookSlick() {
               quality={100}
               width={307}
               height={178}
-              placeholder="blur"
+              priority
             />
           </div>
           <div className="p-5">
@@ -100,7 +100,7 @@ export default function FacebookSlick() {
               quality={100}
               width={312}
               height={149}
-              placeholder="blur"
+              priority
             />
           </div>
           <div className="p-5">
@@ -110,7 +110,7 @@ export default function FacebookSlick() {
               quality={100}
               width={346}
               height={185}
-              placeholder="blur"
+              priority
             />
           </div>
           <div className="p-5">
@@ -120,7 +120,7 @@ export default function FacebookSlick() {
               quality={100}
               width={348}
               height={236}
-              placeholder="blur"
+              priority
             />
           </div>
           <div className="p-5">
@@ -130,7 +130,7 @@ export default function FacebookSlick() {
               quality={100}
               width={319}
               height={315}
-              placeholder="blur"
+              priority
             />
           </div>
         </Slider>
@@ -144,7 +144,7 @@ export default function FacebookSlick() {
               quality={100}
               width={526}
               height={92}
-              placeholder="blur"
+              priority
             />
           </div>
           <div className="p-5">
@@ -164,7 +164,7 @@ export default function FacebookSlick() {
               quality={100}
               width={513}
               height={85}
-              placeholder="blur"
+              priority
             />
           </div>
           <div className="p-5">
@@ -174,7 +174,7 @@ export default function FacebookSlick() {
               quality={100}
               width={492}
               height={84}
-              placeholder="blur"
+              priority
             />
           </div>
           <div className="p-5">
@@ -184,7 +184,7 @@ export default function FacebookSlick() {
               quality={100}
               width={455}
               height={251}
-              placeholder="blur"
+              priority
             />
           </div>
           <div className="p-5">
@@ -194,7 +194,7 @@ export default function FacebookSlick() {
               quality={100}
               width={502}
               height={266}
-              placeholder="blur"
+              priority
             />
           </div>
           <div className="p-5">
@@ -204,7 +204,7 @@ export default function FacebookSlick() {
               quality={100}
               width={499}
               height={170}
-              placeholder="blur"
+              priority
             />
           </div>
         </Slider>
