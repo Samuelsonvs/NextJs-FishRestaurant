@@ -7,14 +7,14 @@ class MyDocument extends Document {
         <Head>
           <link
             rel="preload"
-            href="/font/montserratRegular.woff2"
+            href="/fonts/montserratRegular.woff2"
             as="font"
             type="font/woff2"
             crossOrigin="anonymous"
           />
           <link
             rel="preload"
-            href="/font/playfairDisplay.woff2"
+            href="/fonts/playfairDisplay.woff2"
             as="font"
             type="font/woff2"
             crossOrigin="anonymous"
