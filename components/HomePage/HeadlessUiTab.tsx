@@ -32,6 +32,10 @@ export default function HeadlessUiTab() {
   };
 
   return (
+    <>
+    <h3 className="mt-10 text-4xl text-center font-playfair">
+    Menüyü Keşfet
+  </h3>
     <div className="flex flex-col items-center mt-10">
       <Tab.Group
         onChange={(index) => {
@@ -123,5 +127,6 @@ export default function HeadlessUiTab() {
         setIsOpen={setIsOpen}
       />
     </div>
+    </>
   );
 }
