@@ -1,24 +1,55 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { useForm, SubmitHandler } from "react-hook-form";
 
-import FooterIcon from "@/public/images/logo/footericon.png";
+import FooterIcon from "@/public/images/logo/catlogo.png";
 import FacebookSvg from "@/public/svg/facebook.svg";
 import InstagramSvg from "@/public/svg/instagram.svg";
 
+
+type Inputs = {
+  email: string
+};
+
 export default function Footer() {
+  const { register, handleSubmit, formState: { errors } } = useForm<Inputs>();
+  const onSubmit: SubmitHandler<Inputs> = data => console.log(data);
+  
   return (
-    <div className="mt-10 bg-gray-700 text-yellow-50 font-playfair">
-      <div className="py-10 hidden sm:flex justify-center">
-        <Image src={FooterIcon} alt="footer-icon" width={300} height={115} />
+    <div className="mt-10 bg-gradient-to-b from-yellow-50 via-red-100 to-yellow-100 text-gray-500 font-playfair">
+      <div className="py-10 flex justify-center">
+        <Image src={FooterIcon} alt="footer-icon" width={200} height={203} />
       </div>
-      <div className="py-10 flex sm:hidden justify-center">
-        <Image src={FooterIcon} alt="footer-icon" width={150} height={58} />
-      </div>
-      <ul className="flex justify-evenly text-lg sm:text-2xl">
-        <li>Anasayfa</li>
-        <li>Blog</li>
-        <li>Tarifler</li>
-        <li>Hakkımızda</li>
+      <ul className="flex justify-evenly text-lg sm:text-2xl border-t-2 border-b-2 border-green-400 border-opacity-30 py-4">
+        <li>
+          <Link passHref href="/">
+            <a>
+              Anasayfa
+            </a>
+          </Link>
+        </li>
+        <li>
+          <Link passHref href="/">
+            <a>
+              Blog
+            </a>
+          </Link>
+        </li>
+        <li>
+          <Link passHref href="/">
+            <a>
+              Tarifler
+            </a>
+          </Link>
+        </li>
+        <li>
+          <Link passHref href="/">
+            <a>
+              Hakkımızda
+            </a>
+          </Link>
+        </li>
       </ul>
       <ul className="p-10 flex justify-center">
         <li className="px-4">
@@ -42,15 +73,34 @@ export default function Footer() {
           </a>
         </li>
       </ul>
-      <ul className="p-2 mt-5 flex flex-col font-serif items-center text-lg smtext-2xl">
+      <div>
+        <h3 className="text-center py-2 text-2xl sm:text-3xl">Bizi Takipte Kalın.</h3>
+        <form className="max-w-2xl p-3 mx-auto" onSubmit={handleSubmit(onSubmit)}>
+            <div className="flex flex-col sm:flex-row">
+            <input
+              className="py-3 px-5 w-full rounded text-gray-700 border border-transparent focus:outline-none focus:ring-2 focus:ring-yellow-900 focus:border-transparent"
+              type="text"
+              placeholder="Email adresinizi girin"
+              {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
+            />
+            <input
+              className="button-active-effect mt-5 sm:mt-0 sm:ml-5 py-3 px-7 rounded bg-yellow-600 text-yellow-50 cursor-pointer"
+              value="Takip Et"
+              type="submit"
+            />
+            </div>
+            {errors.email && <span className="mt-4 block text-red-500">Lütfen email adresinizi doğru girin.</span>} 
+        </form>
+      </div>
+      <ul className="p-2 mt-5 flex flex-col items-center font-mono text-lg smtext-2xl">
         <li>
           <ul className="flex flex-col">
-            <li className="p-2 flex justify-center items-center">
+            <li className="p-2 flex justify-center font-serif font-semibold items-center">
               <div className="p-1">Telefon</div>
               <div className="p-1">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6 text-yellow-200"
+                  className="h-6 w-6 text-yellow-600"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -69,12 +119,12 @@ export default function Footer() {
         </li>
         <li>
           <ul className="flex flex-col">
-            <li className="p-2 flex justify-center items-center">
+            <li className="p-2 flex justify-center font-serif font-semibold items-center">
               <div className="p-1">Adres</div>
               <div className="p-1">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6 text-yellow-200"
+                  className="h-6 w-6 text-yellow-600"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"

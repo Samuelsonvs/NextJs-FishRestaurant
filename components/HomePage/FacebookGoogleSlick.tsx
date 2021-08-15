@@ -61,7 +61,7 @@ export default function FacebookSlick() {
           );
         })}
       </div>
-      <div className="block sm:hidden py-10">
+      <div className="block sm:hidden">
         <Slider {...settings} className="mt-10">
           <div className="p-5">
             <Image
