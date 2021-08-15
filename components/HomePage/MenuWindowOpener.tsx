@@ -5,7 +5,7 @@ import Image from "next/image";
 import SvgCreator from "../SvgCreator";
 import { LightBoxConstant } from "@/interfaces/interface";
 
-export default function LightBox({
+export default function MenuWindowOpener({
   isOpen,
   setIsOpen,
   lightboxData,

@@ -1,11 +1,10 @@
 import Image from 'next/image';
-import { Transition } from '@headlessui/react';
 
 import BgCat from "@/public/images/content/catbg.jpg";
 
 export default function BgCatFishEyes() {
     return (
-        <div className="mt-10 p-5 max-w-5xl mx-auto">
+        <div className="mt-10 p-5">
             <div className="flex justify-between flex-col md:flex-row items-center mt-20">
                 <div className="flex-shrink-0 animate-bounce">
                     <Image src={BgCat} alt="shark-menu" placeholder="blur" width={366} height={372} />

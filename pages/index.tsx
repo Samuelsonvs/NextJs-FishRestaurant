@@ -1,11 +1,7 @@
-import Image from "next/image";
-
 import Container from "@/container/Container";
-import ReactSlick from "@/components/HomePage/ReactSlick";
+import TopSlick from "@/components/HomePage/TopSlick";
 import FacebookGoogleSlick from "@/components/HomePage/FacebookGoogleSlick";
-import HeadlessUiTab from "@/components/HomePage/HeadlessUiTab";
-import MenuImage from "@/public/images/content/hamsiyePlate.png";
-import BgImageBox from "@/components/HomePage/BgImageBox";
+import MenuTab from "@/components/HomePage/MenuTab";
 import Welcome from "@/components/HomePage/Welcome";
 import Gallery from "@/components/HomePage/Gallery";
 import BgCatFishEyes from "@/components/HomePage/BgCatFishEyes";
@@ -16,25 +12,13 @@ export default function Home() {
   return (
     <Container>
       <>
-        <ReactSlick />
+      <TopSlick />
+      <div className="max-w-5xl mx-auto">
+        <Welcome />
         <MenuSvgIcon/>
         <BgCatFishEyes />
-        <Welcome />
-        <div className="mt-10 p-5 max-w-5xl mx-auto">
-          <div className="mt-20">
-            <div className="flex justify-center">
-              <Image
-                width={250}
-                height={270}
-                src={MenuImage}
-                alt="hamsiye-tabak"
-                priority
-              />
-            </div>
-          </div>
-        </div>
-        <HeadlessUiTab />
-        {/* <BgImageBox /> */}
+      </div>
+        <MenuTab />
         <FacebookGoogleSlick />
         <Gallery />
         <GoogleMap />

@@ -3,13 +3,14 @@ import { Tab, Transition } from "@headlessui/react";
 import Image from "next/image";
 
 import categories from "@/data/menuDatas.json";
-import LightBox from "./LightBox";
+import MenuWindowOpener from "./MenuWindowOpener";
+import MenuImage from "@/public/images/content/hamsiyePlate.png";
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function HeadlessUiTab() {
+export default function MenuTab() {
   const [activeTabNum, setActiveTabNum] = useState(0);
   const [lightboxData, setLightboxData] = useState({
     bigImage: "",
@@ -33,10 +34,19 @@ export default function HeadlessUiTab() {
 
   return (
     <>
-    <h3 className="mt-10 text-4xl text-center font-playfair">
-    Menüyü Keşfet
-  </h3>
     <div className="flex flex-col items-center mt-10">
+      <div className="flex justify-center">
+              <Image
+                width={250}
+                height={270}
+                src={MenuImage}
+                alt="hamsiye-tabak"
+                priority
+              />
+      </div>
+      <h3 className="py-10 text-4xl text-center font-playfair">
+        Menüyü Keşfet
+      </h3>
       <Tab.Group
         onChange={(index) => {
           setActiveTabNum(index);
@@ -121,7 +131,7 @@ export default function HeadlessUiTab() {
           ))}
         </Tab.Panels>
       </Tab.Group>
-      <LightBox
+      <MenuWindowOpener
         isOpen={isOpen}
         lightboxData={lightboxData}
         setIsOpen={setIsOpen}

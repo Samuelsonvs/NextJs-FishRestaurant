@@ -5,7 +5,7 @@ import { Transition } from "@headlessui/react";
 
 import { ThemeController } from "@/interfaces/interface";
 import SvgCreator from "@/components/SvgCreator";
-import Logo from "@/public/images/logo/orange2.png";
+import Logo from "@/public/images/logo/navbarlogo.png";
 
 const navList = [
   { name: "Anasayfa", route: "/" },

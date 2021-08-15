@@ -3,7 +3,7 @@ import { Transition } from "@headlessui/react";
 
 import { TransitionUiElem } from "@/interfaces/interface";
 
-export default function TransitionUi({
+export default function TopSlickTexts({
   activeSlide,
   num,
   text,

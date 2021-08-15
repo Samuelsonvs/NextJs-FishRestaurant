@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Slider from "react-slick";
 import Image from "next/image";
 import Link from "next/link";
-import TransitionUi from "./TransitionUi";
+import TopSlickTexts from "./TopSlickTexts";
 
 import Image1 from "@/public/images/topslide/1.jpg";
 import Image2 from "@/public/images/topslide/2.jpg";
@@ -10,7 +10,7 @@ import Image3 from "@/public/images/topslide/3.jpg";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-export default function ReactSlick() {
+export default function TopSlick() {
   const [activeSlide, setActiveSlide] = useState(0);
   const [afterActiveSlide, setAfterActiveSlide] = useState(0);
   const settings = {
@@ -38,9 +38,9 @@ export default function ReactSlick() {
         </div>
       </Slider>
       <div className="absolute top-0 bottom-0 right-0 left-0 z-10 gradient"></div>
-      <TransitionUi activeSlide={activeSlide} num={0} text={"Balık"} />
-      <TransitionUi activeSlide={activeSlide} num={1} text={"Cafe"} />
-      <TransitionUi activeSlide={activeSlide} num={2} text={"Restorant"} />
+      <TopSlickTexts activeSlide={activeSlide} num={0} text={"Balık"} />
+      <TopSlickTexts activeSlide={activeSlide} num={1} text={"Cafe"} />
+      <TopSlickTexts activeSlide={activeSlide} num={2} text={"Restorant"} />
     </div>
   );
 }

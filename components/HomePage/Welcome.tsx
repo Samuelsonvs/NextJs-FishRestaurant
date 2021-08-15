@@ -5,7 +5,7 @@ import WelcomeImage from "@/public/images/content/welcome.jpg";
 
 export default function Welcome() {
     return (
-        <div className="mt-10 p-5 max-w-5xl mx-auto">
+        <div className="mt-0 sm:mt-10 p-5">
         <div className="mt-20 flex flex-col md:flex-row justify-center items-center md:items-start">
             <div className="flex-shrink-0">
             <Image width={480} height={640} placeholder="blur" src={WelcomeImage} alt="welcome-img" />
