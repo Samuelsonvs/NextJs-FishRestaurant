@@ -23,7 +23,7 @@ export default function TopSlick() {
   };
   return (
     <div className="relative">
-      {/* <Slider className="bg-yellow-100" {...settings}>
+      <Slider className="bg-yellow-100" {...settings}>
         <div>
           <Image src={Image1} width={1920} height={1440} alt="slider-image" />
         </div>
@@ -37,7 +37,7 @@ export default function TopSlick() {
       <div className="absolute top-0 bottom-0 right-0 left-0 z-10 gradient"></div>
       <TopSlickTexts activeSlide={activeSlide} num={0} text={"Balık"} />
       <TopSlickTexts activeSlide={activeSlide} num={1} text={"Cafe"} />
-      <TopSlickTexts activeSlide={activeSlide} num={2} text={"Restorant"} /> */}
+      <TopSlickTexts activeSlide={activeSlide} num={2} text={"Restorant"} />
     </div>
   );
 }
