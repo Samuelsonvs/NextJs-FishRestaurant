@@ -49,7 +49,6 @@ export default function Galery() {
                     width={450}
                     height={338}
                     alt="Gallery-Images"
-                    placeholder="blur"
                   />
                 </div>
               );
