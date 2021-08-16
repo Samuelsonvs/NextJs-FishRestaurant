@@ -3,11 +3,11 @@ import SimpleReactLightbox from "simple-react-lightbox";
 import Image from "next/image";
 
 import GalleryImage_1 from "@/public/images/gallery/gallery_1.jpg";
-import GalleryImage_2 from "@/public/images/gallery/gallery_1.jpg";
-import GalleryImage_3 from "@/public/images/gallery/gallery_1.jpg";
-import GalleryImage_4 from "@/public/images/gallery/gallery_1.jpg";
-import GalleryImage_5 from "@/public/images/gallery/gallery_1.jpg";
-import GalleryImage_6 from "@/public/images/gallery/gallery_1.jpg";
+import GalleryImage_2 from "@/public/images/gallery/gallery_2.jpg";
+import GalleryImage_3 from "@/public/images/gallery/gallery_3.jpg";
+import GalleryImage_4 from "@/public/images/gallery/gallery_4.jpg";
+import GalleryImage_5 from "@/public/images/gallery/gallery_5.jpg";
+import GalleryImage_6 from "@/public/images/gallery/gallery_6.jpg";
 
 const GalleryImages = [
   GalleryImage_1,
@@ -48,7 +48,7 @@ export default function Galery() {
                     src={src}
                     width={450}
                     height={338}
-                    alt="Gallery Images"
+                    alt="Gallery-Images"
                     placeholder="blur"
                   />
                 </div>
