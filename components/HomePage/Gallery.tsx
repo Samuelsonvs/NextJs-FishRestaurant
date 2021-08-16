@@ -2,7 +2,21 @@ import { SRLWrapper } from "simple-react-lightbox";
 import SimpleReactLightbox from "simple-react-lightbox";
 import Image from "next/image";
 
-import GalleryImages from "@/data/GalleryImages.json"
+import GalleryImage_1 from "@/public/images/gallery/gallery_1.jpg";
+import GalleryImage_2 from "@/public/images/gallery/gallery_1.jpg";
+import GalleryImage_3 from "@/public/images/gallery/gallery_1.jpg";
+import GalleryImage_4 from "@/public/images/gallery/gallery_1.jpg";
+import GalleryImage_5 from "@/public/images/gallery/gallery_1.jpg";
+import GalleryImage_6 from "@/public/images/gallery/gallery_1.jpg";
+
+const GalleryImages = [
+  GalleryImage_1,
+  GalleryImage_2,
+  GalleryImage_3,
+  GalleryImage_4,
+  GalleryImage_5,
+  GalleryImage_6,
+]
 
 const options = {
   buttons: {
@@ -31,11 +45,11 @@ export default function Galery() {
                 <div key={idx} className="cursor-pointer">
                   <Image
                     className="transform transition duration-300 ease-in-out hover:scale-110"
-                    src={src.src}
+                    src={src}
                     width={450}
                     height={338}
                     alt="Gallery Images"
-                    placeholder="empty"
+                    placeholder="blur"
                   />
                 </div>
               );
