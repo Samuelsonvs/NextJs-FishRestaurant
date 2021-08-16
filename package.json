@@ -22,12 +22,10 @@
     "react-dom": "17.0.2",
     "react-hook-form": "^7.12.2",
     "react-material-ui-carousel": "^2.3.1",
-    "react-slick": "^0.28.1",
     "simple-react-lightbox": "^3.6.6"
   },
   "devDependencies": {
     "@types/react": "17.0.16",
-    "@types/react-slick": "^0.23.5",
     "@types/simple-react-lightbox": "^3.6.1",
     "autoprefixer": "^10.3.1",
     "eslint": "7.32.0",

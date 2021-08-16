@@ -1,32 +1,10 @@
 import React from "react";
-import Slider from "react-slick";
 import Image from "next/image";
+import Carousel from 'react-material-ui-carousel'
 
 import Comments from "@/data/Comments.json";
 
 export default function FacebookSlick() {
-  const settings = {
-    infinite: true,
-    autoplay: true,
-    speed: 1300,
-    slidesToShow: 2,
-    arrows: false,
-    slidesToScroll: 1,
-    responsive: [
-      {
-        breakpoint: 1240,
-        settings: {
-          dots: true,
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 550,
-        settings: "unslick"
-      }
-    ],
-  };
   return (
     <div className="max-w-screen-3xl text-center mt-20">
       <h2 className="font-playfair text-3xl leading-10 md:text-5xl lg:text-6xl">
@@ -53,11 +31,11 @@ export default function FacebookSlick() {
             Object.values(Comments).map((version, idx) => {
                 return (
                 <div key={idx} className={`${idx === 0 ? "block sx:hidden" : "hidden sx:block py-10"}`}>
-                  <Slider {...settings as {}} className="mt-10">
+                  <Carousel animation="slide" reverseEdgeAnimationDirection={false} timeout={{appear:800,enter:800, exit:800}} className="mt-10">
                     {
                     version.map((image, index) => {
                       return (
-                        <div key={index} className={`p-5 ${idx === 0 ? "border-t-2 border-yellow-300" : ""}`}>
+                        <div key={index} className="p-5">
                           <Image
                             src={image.src}
                             alt={image.alt}
@@ -68,7 +46,7 @@ export default function FacebookSlick() {
                       )
                     })
                     }
-                </Slider>
+                </Carousel>
                 </div>
                 )
               })
