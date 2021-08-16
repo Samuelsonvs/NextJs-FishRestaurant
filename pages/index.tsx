@@ -19,8 +19,8 @@ export default function Home() {
         <BgCatFishEyes />
       </div>
         <MenuTab />
-        <FacebookGoogleSlick />
         <Gallery />
+        <FacebookGoogleSlick />
         <GoogleMap />
       </>
     </Container>

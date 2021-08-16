@@ -17,7 +17,7 @@ export default function Footer() {
   const onSubmit: SubmitHandler<Inputs> = data => console.log(data);
   
   return (
-    <div className="mt-10 bg-gradient-to-b from-yellow-50 via-red-100 to-yellow-100 text-gray-500 font-playfair">
+    <div className="mt-10 bg-gradient-to-b from-yellow-50 via-green-50 to-yellow-100 text-gray-500 font-playfair">
       <div className="py-10 flex justify-center">
         <Image src={FooterIcon} alt="footer-icon" width={200} height={203} />
       </div>

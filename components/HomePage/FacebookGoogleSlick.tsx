@@ -1,42 +1,30 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Slider from "react-slick";
 import Image from "next/image";
 
-import Suggestion1 from "@/public/images/facebookcomments/suggestion1.png";
-import Suggestion2 from "@/public/images/facebookcomments/suggestion2.png";
-import Suggestion3 from "@/public/images/facebookcomments/suggestion3.png";
-import Suggestion4 from "@/public/images/facebookcomments/suggestion4.png";
-import MobilSuggestion1 from "@/public/images/facebookcomments/mobilSuggestion1.png";
-import MobilSuggestion2 from "@/public/images/facebookcomments/mobilSuggestion2.png";
-import MobilSuggestion3 from "@/public/images/facebookcomments/mobilSuggestion3.png";
-import MobilSuggestion4 from "@/public/images/facebookcomments/mobilSuggestion4.png";
-import GoogleComment1 from "@/public/images/googlecomments/googlecomment_1.png";
-import GoogleComment2 from "@/public/images/googlecomments/googlecomment_2.png";
-import GoogleComment3 from "@/public/images/googlecomments/googlecomment_3.png";
-import GoogleCommentMobil1 from "@/public/images/googlecomments/googlecommentmobil_1.png";
-import GoogleCommentMobil2 from "@/public/images/googlecomments/googlecommentmobil_2.png";
-import GoogleCommentMobil3 from "@/public/images/googlecomments/googlecommentmobil_3.png";
+import Comments from "@/data/Comments.json";
 
 export default function FacebookSlick() {
   const settings = {
     infinite: true,
     autoplay: true,
-    speed: 1000,
+    speed: 1300,
     slidesToShow: 2,
     arrows: false,
-    slidesToScroll: 2,
+    slidesToScroll: 1,
     responsive: [
       {
         breakpoint: 1240,
         settings: {
-          infinite: true,
-          autoplay: true,
-          speed: 1000,
+          dots: true,
           slidesToShow: 1,
-          arrows: false,
           slidesToScroll: 1,
         },
       },
+      {
+        breakpoint: 550,
+        settings: "unslick"
+      }
     ],
   };
   return (
@@ -61,154 +49,30 @@ export default function FacebookSlick() {
           );
         })}
       </div>
-      <div className="block sm:hidden">
-        <Slider {...settings} className="mt-10">
-          <div className="p-5">
-            <Image
-              src={MobilSuggestion1}
-              alt="resim"
-              quality={100}
-              width={277}
-              height={136}
-              priority
-            />
-          </div>
-          <div className="p-5">
-            <Image
-              src={MobilSuggestion2}
-              alt="resim"
-              quality={100}
-              width={264}
-              height={112}
-              priority
-            />
-          </div>
-          <div className="p-5">
-            <Image
-              src={MobilSuggestion3}
-              alt="resim"
-              quality={100}
-              width={307}
-              height={178}
-              priority
-            />
-          </div>
-          <div className="p-5">
-            <Image
-              src={MobilSuggestion4}
-              alt="resim"
-              quality={100}
-              width={312}
-              height={149}
-              priority
-            />
-          </div>
-          <div className="p-5">
-            <Image
-              src={GoogleCommentMobil1}
-              alt="resim"
-              quality={100}
-              width={346}
-              height={185}
-              priority
-            />
-          </div>
-          <div className="p-5">
-            <Image
-              src={GoogleCommentMobil2}
-              alt="resim"
-              quality={100}
-              width={348}
-              height={236}
-              priority
-            />
-          </div>
-          <div className="p-5">
-            <Image
-              src={GoogleCommentMobil3}
-              alt="resim"
-              quality={100}
-              width={319}
-              height={315}
-              priority
-            />
-          </div>
-        </Slider>
-      </div>
-      <div className="hidden sm:block py-10">
-        <Slider {...settings} className="mt-10">
-          <div className="p-5">
-            <Image
-              src={Suggestion1}
-              alt="resim"
-              quality={100}
-              width={526}
-              height={92}
-              priority
-            />
-          </div>
-          <div className="p-5">
-            <Image
-              src={Suggestion2}
-              alt="resim"
-              quality={100}
-              width={519}
-              height={126}
-              placeholder="blur"
-            />
-          </div>
-          <div className="p-5">
-            <Image
-              src={Suggestion3}
-              alt="resim"
-              quality={100}
-              width={513}
-              height={85}
-              priority
-            />
-          </div>
-          <div className="p-5">
-            <Image
-              src={Suggestion4}
-              alt="resim"
-              quality={100}
-              width={492}
-              height={84}
-              priority
-            />
-          </div>
-          <div className="p-5">
-            <Image
-              src={GoogleComment1}
-              alt="resim"
-              quality={100}
-              width={455}
-              height={251}
-              priority
-            />
-          </div>
-          <div className="p-5">
-            <Image
-              src={GoogleComment2}
-              alt="resim"
-              quality={100}
-              width={502}
-              height={266}
-              priority
-            />
-          </div>
-          <div className="p-5">
-            <Image
-              src={GoogleComment3}
-              alt="resim"
-              quality={100}
-              width={499}
-              height={170}
-              priority
-            />
-          </div>
-        </Slider>
-      </div>
+          {
+            Object.values(Comments).map((version, idx) => {
+                return (
+                <div key={idx} className={`${idx === 0 ? "block sx:hidden" : "hidden sx:block py-10"}`}>
+                  <Slider {...settings as {}} className="mt-10">
+                    {
+                    version.map((image, index) => {
+                      return (
+                        <div key={index} className={`p-5 ${idx === 0 ? "border-t-2 border-yellow-300" : ""}`}>
+                          <Image
+                            src={image.src}
+                            alt={image.alt}
+                            width={image.width}
+                            height={image.height}
+                          />
+                        </div>
+                      )
+                    })
+                    }
+                </Slider>
+                </div>
+                )
+              })
+          }
     </div>
   );
 }

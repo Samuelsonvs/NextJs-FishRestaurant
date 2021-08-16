@@ -1,14 +1,11 @@
 import React, { useState } from "react";
 import Slider from "react-slick";
 import Image from "next/image";
-import Link from "next/link";
 import TopSlickTexts from "./TopSlickTexts";
 
 import Image1 from "@/public/images/topslide/1.jpg";
 import Image2 from "@/public/images/topslide/2.jpg";
 import Image3 from "@/public/images/topslide/3.jpg";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
 export default function TopSlick() {
   const [activeSlide, setActiveSlide] = useState(0);
