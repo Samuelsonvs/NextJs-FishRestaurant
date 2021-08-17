@@ -17,22 +17,31 @@ const navList = [
 export default function Navbar({ mounted }: ThemeController): JSX.Element {
   const [isShowing, setIsShowing] = useState(false);
   const [navListColor, setNavListColor] = useState("text-gray-200");
+  const [width, setWidth] = useState(0);
 
+  console.log(width);
   const [navbarChange, setNavbarChange] = useState(false);
 
   useEffect(() => {
-    const changeNavbar = () => {
-      if (window.scrollY >= 100) {
-        setNavbarChange(true);
-        setNavListColor("text-gray-600");
-      } else {
-        setNavbarChange(false);
-        setNavListColor("text-gray-200");
-      }
-    };
-    window.addEventListener("scroll", changeNavbar, {passive: true});
-    return () => removeEventListener("scroll", changeNavbar);
-  }, []);
+    setWidth(window.innerWidth)
+  },[])
+
+  useEffect(() => {
+    if (width > 550) {
+      console.log(window.scrollY)
+      const changeNavbar = () => {
+        if (window.scrollY >= 100) {
+          setNavbarChange(true);
+          setNavListColor("text-gray-600");
+        } else {
+          setNavbarChange(false);
+          setNavListColor("text-gray-200");
+        }
+      };
+      window.addEventListener("scroll", changeNavbar, {passive: true});
+      return () => removeEventListener("scroll", changeNavbar);
+    }
+  }, [width]);
   return (
     <header
       className={`sticky ${
