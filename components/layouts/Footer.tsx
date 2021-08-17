@@ -3,19 +3,22 @@ import Image from "next/image";
 import Link from "next/link";
 import { useForm, SubmitHandler } from "react-hook-form";
 
-import FooterIcon from "@/public/images/logo/catlogo.png";
+import FooterIcon from "@/public/static/images/logo/catlogo.png";
 import FacebookSvg from "@/public/svg/facebook.svg";
 import InstagramSvg from "@/public/svg/instagram.svg";
 
-
 type Inputs = {
-  email: string
+  email: string;
 };
 
 export default function Footer() {
-  const { register, handleSubmit, formState: { errors } } = useForm<Inputs>();
-  const onSubmit: SubmitHandler<Inputs> = data => console.log(data);
-  
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<Inputs>();
+  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
+
   return (
     <div className="mt-10 bg-gradient-to-b from-yellow-50 via-green-50 to-yellow-100 text-gray-500 font-playfair">
       <div className="py-10 flex justify-center">
@@ -24,30 +27,22 @@ export default function Footer() {
       <ul className="flex justify-evenly text-lg sm:text-2xl border-t-2 border-b-2 border-green-400 border-opacity-30 py-4">
         <li>
           <Link passHref href="/">
-            <a>
-              Anasayfa
-            </a>
+            <a>Anasayfa</a>
           </Link>
         </li>
         <li>
           <Link passHref href="/">
-            <a>
-              Blog
-            </a>
+            <a>Blog</a>
           </Link>
         </li>
         <li>
           <Link passHref href="/">
-            <a>
-              Tarifler
-            </a>
+            <a>Tarifler</a>
           </Link>
         </li>
         <li>
           <Link passHref href="/">
-            <a>
-              Hakkımızda
-            </a>
+            <a>Hakkımızda</a>
           </Link>
         </li>
       </ul>
@@ -74,9 +69,14 @@ export default function Footer() {
         </li>
       </ul>
       <div>
-        <h3 className="text-center py-2 text-2xl sm:text-3xl">Bizi Takipte Kalın.</h3>
-        <form className="max-w-2xl p-3 mx-auto" onSubmit={handleSubmit(onSubmit)}>
-            <div className="flex flex-col sm:flex-row">
+        <h3 className="text-center py-2 text-2xl sm:text-3xl">
+          Bizi Takipte Kalın.
+        </h3>
+        <form
+          className="max-w-2xl p-3 mx-auto"
+          onSubmit={handleSubmit(onSubmit)}
+        >
+          <div className="flex flex-col sm:flex-row">
             <input
               className="py-3 px-5 w-full rounded text-gray-700 border border-transparent focus:outline-none focus:ring-2 focus:ring-yellow-900 focus:border-transparent"
               type="text"
@@ -88,8 +88,12 @@ export default function Footer() {
               value="Takip Et"
               type="submit"
             />
-            </div>
-            {errors.email && <span className="mt-4 block text-red-500">Lütfen email adresinizi doğru girin.</span>} 
+          </div>
+          {errors.email && (
+            <span className="mt-4 block text-red-500">
+              Lütfen email adresinizi doğru girin.
+            </span>
+          )}
         </form>
       </div>
       <ul className="p-2 mt-5 flex flex-col items-center font-mono text-lg smtext-2xl">

@@ -34,7 +34,10 @@ export default function Container({
           property="og:url"
           content={`https://hamsiyebalik.com${router.asPath}`}
         />
-        <link rel="canonical" href={`https://hamsiyebalik.com${router.asPath}`} />
+        <link
+          rel="canonical"
+          href={`https://hamsiyebalik.com${router.asPath}`}
+        />
         <meta property="og:type" content={meta.type} />
         <meta property="og:site_name" content="Mert Samet" />
         <meta property="og:description" content={meta.description} />

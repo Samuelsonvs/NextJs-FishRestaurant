@@ -12,12 +12,12 @@ export default function Home() {
   return (
     <Container>
       <>
-      <TopSlick />
-      <div className="max-w-5xl mx-auto">
-        <Welcome />
-        <MenuSvgIcon/>
-        <BgCatFishEyes />
-      </div>
+        <TopSlick />
+        <div className="max-w-5xl mx-auto">
+          <Welcome />
+          <MenuSvgIcon />
+          <BgCatFishEyes />
+        </div>
         <MenuTab />
         <Gallery />
         <FacebookGoogleSlick />

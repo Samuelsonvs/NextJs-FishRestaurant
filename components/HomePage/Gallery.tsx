@@ -2,12 +2,12 @@ import { SRLWrapper } from "simple-react-lightbox";
 import SimpleReactLightbox from "simple-react-lightbox";
 import Image from "next/image";
 
-import GalleryImage_1 from "@/public/images/gallery/gallery_1.jpg";
-import GalleryImage_2 from "@/public/images/gallery/gallery_2.jpg";
-import GalleryImage_3 from "@/public/images/gallery/gallery_3.jpg";
-import GalleryImage_4 from "@/public/images/gallery/gallery_4.jpg";
-import GalleryImage_5 from "@/public/images/gallery/gallery_5.jpg";
-import GalleryImage_6 from "@/public/images/gallery/gallery_6.jpg";
+import GalleryImage_1 from "@/public/static/images/gallery/gallery_1.jpg";
+import GalleryImage_2 from "@/public/static/images/gallery/gallery_2.jpg";
+import GalleryImage_3 from "@/public/static/images/gallery/gallery_3.jpg";
+import GalleryImage_4 from "@/public/static/images/gallery/gallery_4.jpg";
+import GalleryImage_5 from "@/public/static/images/gallery/gallery_5.jpg";
+import GalleryImage_6 from "@/public/static/images/gallery/gallery_6.jpg";
 
 const GalleryImages = [
   GalleryImage_1,
@@ -16,7 +16,7 @@ const GalleryImages = [
   GalleryImage_4,
   GalleryImage_5,
   GalleryImage_6,
-]
+];
 
 const options = {
   buttons: {
@@ -49,6 +49,7 @@ export default function Galery() {
                     width={450}
                     height={338}
                     alt="Gallery-Images"
+                    placeholder="blur"
                   />
                 </div>
               );

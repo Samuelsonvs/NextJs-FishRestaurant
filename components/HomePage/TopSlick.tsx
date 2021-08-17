@@ -1,18 +1,24 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import TopSlickTexts from "./TopSlickTexts";
-import Carousel from 'react-material-ui-carousel'
+import Carousel from "react-material-ui-carousel";
 
-import Image1 from "@/public/images/topslide/1.jpg";
-import Image2 from "@/public/images/topslide/2.jpg";
-import Image3 from "@/public/images/topslide/3.jpg";
+import Image1 from "@/public/static/images/topslide/1.jpg";
+import Image2 from "@/public/static/images/topslide/2.jpg";
+import Image3 from "@/public/static/images/topslide/3.jpg";
 
 export default function TopSlick() {
   const [activeSlide, setActiveSlide] = useState(0);
   return (
     <div className="relative">
-      <Carousel timeout={{appear:620,enter:620, exit:620}} interval={4000} onChange={(index:number, active:number) => {setActiveSlide(index)} }>
-      <div>
+      <Carousel
+        timeout={{ appear: 620, enter: 620, exit: 620 }}
+        interval={4000}
+        onChange={(index: number, active: number) => {
+          setActiveSlide(index);
+        }}
+      >
+        <div>
           <Image src={Image1} width={1920} height={1440} alt="slider-image" />
         </div>
         <div>

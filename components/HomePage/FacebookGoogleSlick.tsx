@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import Carousel from 'react-material-ui-carousel'
+import Carousel from "react-material-ui-carousel";
 
 import Comments from "@/data/Comments.json";
 
@@ -27,30 +27,37 @@ export default function FacebookSlick() {
           );
         })}
       </div>
-          {
-            Object.values(Comments).map((version, idx) => {
+      {Object.values(Comments).map((version, idx) => {
+        return (
+          <div
+            key={idx}
+            className={`${
+              idx === 0 ? "block sx:hidden" : "hidden sx:block py-10"
+            }`}
+          >
+            <Carousel
+              animation="slide"
+              navButtonsAlwaysInvisible={true}
+              reverseEdgeAnimationDirection={false}
+              timeout={{ appear: 800, enter: 800, exit: 800 }}
+              className="mt-10"
+            >
+              {version.map((image, index) => {
                 return (
-                <div key={idx} className={`${idx === 0 ? "block sx:hidden" : "hidden sx:block py-10"}`}>
-                  <Carousel animation="slide" reverseEdgeAnimationDirection={false} timeout={{appear:800,enter:800, exit:800}} className="mt-10">
-                    {
-                    version.map((image, index) => {
-                      return (
-                        <div key={index} className="p-5">
-                          <Image
-                            src={image.src}
-                            alt={image.alt}
-                            width={image.width}
-                            height={image.height}
-                          />
-                        </div>
-                      )
-                    })
-                    }
-                </Carousel>
-                </div>
-                )
-              })
-          }
+                  <div key={index} className="p-5">
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      width={image.width}
+                      height={image.height}
+                    />
+                  </div>
+                );
+              })}
+            </Carousel>
+          </div>
+        );
+      })}
     </div>
   );
 }
