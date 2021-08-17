@@ -3,17 +3,18 @@
 // const globby = require('globby');
 // const prettier = require('prettier');
 
-import * as fs from 'fs';
+import * as fs from "fs";
 import { globby } from "globby";
 import prettier from "prettier";
 
 (async () => {
-  const prettierConfig = await prettier.resolveConfig('./.prettierrc.js');
+  const prettierConfig = await prettier.resolveConfig("./.prettierrc.js");
   const pages = await globby([
-    'pages/*.tsx',,
-    '!pages/_*.tsx',
-    '!pages/api',
-    '!pages/404.tsx',
+    "pages/*.tsx",
+    ,
+    "!pages/_*.tsx",
+    "!pages/api",
+    "!pages/404.tsx",
   ]);
 
   const sitemap = `
@@ -21,10 +22,8 @@ import prettier from "prettier";
         <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
             ${pages
               .map((page) => {
-                const path = page
-                  .replace('pages', '')
-                  .replace('.tsx', '')
-                const route = path === '/index' ? '' : path;
+                const path = page.replace("pages", "").replace(".tsx", "");
+                const route = path === "/index" ? "" : path;
 
                 return `
                         <url>
@@ -32,15 +31,15 @@ import prettier from "prettier";
                         </url>
                     `;
               })
-              .join('')}
+              .join("")}
         </urlset>
     `;
 
   const formatted = prettier.format(sitemap, {
     ...prettierConfig,
-    parser: 'html'
+    parser: "html",
   });
 
   // eslint-disable-next-line no-sync
-  fs.writeFileSync('public/sitemap.xml', formatted);
+  fs.writeFileSync("public/sitemap.xml", formatted);
 })();

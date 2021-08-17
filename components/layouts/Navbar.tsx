@@ -4,8 +4,10 @@ import Image from "next/image";
 import { Transition } from "@headlessui/react";
 
 import { ThemeController } from "@/interfaces/interface";
+import WidthContext from "@/context/widthCondition";
 import SvgCreator from "@/components/SvgCreator";
 import Logo from "@/public/static/images/logo/navbarlogo.png";
+import { useContext } from "react";
 
 const navList = [
   { name: "Anasayfa", route: "/" },
@@ -17,18 +19,13 @@ const navList = [
 export default function Navbar({ mounted }: ThemeController): JSX.Element {
   const [isShowing, setIsShowing] = useState(false);
   const [navListColor, setNavListColor] = useState("text-gray-200");
-  const [width, setWidth] = useState(0);
-
-  console.log(width);
   const [navbarChange, setNavbarChange] = useState(false);
 
-  useEffect(() => {
-    setWidth(window.innerWidth)
-  },[])
+  const { width, chanceWidth } = useContext(WidthContext)
 
   useEffect(() => {
+    chanceWidth(window.innerWidth);
     if (width > 550) {
-      console.log(window.scrollY)
       const changeNavbar = () => {
         if (window.scrollY >= 100) {
           setNavbarChange(true);
@@ -38,10 +35,10 @@ export default function Navbar({ mounted }: ThemeController): JSX.Element {
           setNavListColor("text-gray-200");
         }
       };
-      window.addEventListener("scroll", changeNavbar, {passive: true});
+      window.addEventListener("scroll", changeNavbar, { passive: true });
       return () => removeEventListener("scroll", changeNavbar);
     }
-  }, [width]);
+  }, [width, chanceWidth]);
   return (
     <header
       className={`sticky ${

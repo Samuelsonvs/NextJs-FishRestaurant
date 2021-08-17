@@ -26,7 +26,8 @@
       "@/forms/*": ["forms/*"],
       "@/public/*": ["public/*"],
       "@/hooks/*": ["hooks/*"],
-      "@/util/*": ["util/*"]
+      "@/util/*": ["util/*"],
+      "@/context/*": ["context/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
