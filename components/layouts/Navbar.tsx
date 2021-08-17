@@ -30,7 +30,7 @@ export default function Navbar({ mounted }: ThemeController): JSX.Element {
         setNavListColor("text-gray-200");
       }
     };
-    window.addEventListener("scroll", changeNavbar);
+    window.addEventListener("scroll", changeNavbar, {passive: true});
     return () => removeEventListener("scroll", changeNavbar);
   }, []);
   return (
