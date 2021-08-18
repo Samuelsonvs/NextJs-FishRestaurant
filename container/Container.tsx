@@ -17,7 +17,7 @@ export default function Container({
 
   const router = useRouter();
   const meta = {
-    title: customTitle ? customTitle : "Hamsiye Balik – Balık, Yemek.",
+    title: customTitle ? customTitle : "Hamsiye Balık – Balık, Yemek.",
     description: `Restorant, Balık Yemekleri.`,
     image: "",
     type: "website",
@@ -39,7 +39,7 @@ export default function Container({
           href={`https://hamsiyebalik.com${router.asPath}`}
         />
         <meta property="og:type" content={meta.type} />
-        <meta property="og:site_name" content="Mert Samet" />
+        <meta property="og:site_name" content="Hamsiye Balık" />
         <meta property="og:description" content={meta.description} />
         <meta property="og:title" content={meta.title} />
         <meta property="og:image" content={meta.image} />
