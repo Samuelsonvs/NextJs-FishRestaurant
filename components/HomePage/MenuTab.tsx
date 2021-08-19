@@ -80,6 +80,8 @@ export default function MenuTab() {
                 enter="transform transition duration-300 ease-in"
                 enterFrom="opacity-0 scale-90"
                 enterTo="opacity-100 scale-100"
+                leaveFrom="opacity-100 scale-100"
+                leaveTo="opacity-0 scale-90"
               >
                 <Tab.Panel
                   key={idx}
