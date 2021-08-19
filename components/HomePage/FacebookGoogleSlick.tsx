@@ -7,7 +7,7 @@ import Comments from "@/data/Comments.json";
 export default function FacebookSlick() {
   return (
     <div className="max-w-screen-3xl text-center mt-20">
-      <h2 className="font-playfair text-3xl leading-10 md:text-5xl lg:text-6xl">
+      <h2 className="font-playfair text-gray-800 text-3xl leading-10 md:text-5xl lg:text-6xl">
         Bizi Tercih Ettiğiniz İçin Teşekkürler.
       </h2>
       <div className="mt-10">

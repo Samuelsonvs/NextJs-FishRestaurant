@@ -16,7 +16,7 @@ export default function Welcome() {
             alt="welcome-img"
           />
         </div>
-        <div className="ml-5 mt-10 md:mt-0">
+        <div className="ml-5 mt-10 md:mt-0 text-gray-800">
           <h3 className="text-4xl text-center font-playfair">
             Hamsiye
             <br />

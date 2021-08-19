@@ -1,9 +1,4 @@
-// const fs = require('fs');
-
-// const globby = require('globby');
-// const prettier = require('prettier');
-
-import * as fs from "fs";
+import { writeFileSync } from 'fs';
 import { globby } from "globby";
 import prettier from "prettier";
 
@@ -41,5 +36,5 @@ import prettier from "prettier";
   });
 
   // eslint-disable-next-line no-sync
-  fs.writeFileSync("public/sitemap.xml", formatted);
+  writeFileSync("public/sitemap.xml", formatted);
 })();

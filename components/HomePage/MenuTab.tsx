@@ -44,7 +44,7 @@ export default function MenuTab() {
             priority
           />
         </div>
-        <h3 className="py-10 text-4xl text-center font-playfair">
+        <h3 className="py-10 text-4xl text-center font-playfair text-gray-800">
           Menüyü Keşfet
         </h3>
         <Tab.Group
@@ -116,7 +116,7 @@ export default function MenuTab() {
                               priority
                             />
                           </button>
-                          <h3 className="p-2 mt-3 text-2xl text-center font-playfair font-semibold leading-5">
+                          <h3 className="p-2 mt-3 text-2xl text-center text-gray-800 font-playfair font-semibold leading-5">
                             {post.title}
                           </h3>
                           <ul className="mt-1 p-2 px-5 text-center space-x-1 leading-7">

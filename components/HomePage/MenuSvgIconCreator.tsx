@@ -15,7 +15,7 @@ export default function MenuSvgIconCreator({
   return (
     <div className="flex flex-col items-center mt-10 sm:mt-0 leading-8">
       <Image width={80} height={80} src={svg} alt={alt} />
-      <h3 className="mt-5 text-2xl font-playfair">{head}</h3>
+      <h3 className="mt-5 text-2xl font-playfair text-gray-800">{head}</h3>
 
       <p className="mt-5 text-center">{text}</p>
       <Link href={href} passHref>
