@@ -36,7 +36,7 @@ const options = {
 
 export default function Galery() {
   return (
-    <div className="mt-5 sm:mt-20">
+    <section className="mt-5 sm:mt-20">
       <SimpleReactLightbox>
         <SRLWrapper options={options}>
           <div className="w-full grid gap-5 justify-items-center grid-flow-col grid-rows-6 sm:grid-rows-3 lg:grid-rows-2">
@@ -57,6 +57,6 @@ export default function Galery() {
           </div>
         </SRLWrapper>
       </SimpleReactLightbox>
-    </div>
+    </section>
   );
 }

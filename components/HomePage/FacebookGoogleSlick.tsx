@@ -6,7 +6,7 @@ import Comments from "@/data/Comments.json";
 
 export default function FacebookSlick() {
   return (
-    <div className="max-w-screen-3xl text-center mt-20">
+    <section className="max-w-screen-3xl text-center mt-20">
       <h2 className="font-playfair text-gray-800 text-3xl leading-10 md:text-5xl lg:text-6xl">
         Bizi Tercih Ettiğiniz İçin Teşekkürler.
       </h2>
@@ -58,6 +58,6 @@ export default function FacebookSlick() {
           </div>
         );
       })}
-    </div>
+    </section>
   );
 }

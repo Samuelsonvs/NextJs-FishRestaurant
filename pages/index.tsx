@@ -13,11 +13,9 @@ export default function Home() {
     <Container>
       <>
         <TopSlick />
-        <div className="max-w-5xl mx-auto">
-          <Welcome />
-          <MenuSvgIcon />
-          <BgCatFishEyes />
-        </div>
+        <Welcome />
+        <MenuSvgIcon />
+        <BgCatFishEyes />
         <MenuTab />
         <Gallery />
         <FacebookGoogleSlick />

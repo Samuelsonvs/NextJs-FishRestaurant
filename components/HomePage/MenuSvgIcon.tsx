@@ -6,7 +6,7 @@ import ChefHat from "@/public/svg/chefHat.svg";
 
 export default function MenuSvgIcon() {
   return (
-    <div className="mt-10 p-5">
+    <section className="mt-10 p-5 max-w-5xl mx-auto">
       <div className="flex flex-col sm:flex-row items-center justify-center mt-0 sm:mt-10">
         <MenuSvgIconCreator
           svg={ChefHat}
@@ -29,6 +29,6 @@ export default function MenuSvgIcon() {
           alt={"Tepsi"}
         />
       </div>
-    </div>
+    </section>
   );
 }

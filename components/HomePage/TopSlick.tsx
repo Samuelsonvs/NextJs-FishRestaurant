@@ -10,7 +10,7 @@ import Image3 from "@/public/static/images/topslide/3.jpg";
 export default function TopSlick() {
   const [activeSlide, setActiveSlide] = useState(0);
   return (
-    <div className="relative">
+    <section className="relative">
       <Carousel
         timeout={{ appear: 620, enter: 620, exit: 620 }}
         interval={4000}
@@ -32,6 +32,6 @@ export default function TopSlick() {
       <TopSlickTexts activeSlide={activeSlide} num={0} text={"Balık"} />
       <TopSlickTexts activeSlide={activeSlide} num={1} text={"Cafe"} />
       <TopSlickTexts activeSlide={activeSlide} num={2} text={"Restorant"} />
-    </div>
+    </section>
   );
 }

@@ -33,7 +33,7 @@ export default function MenuTab() {
   };
 
   return (
-    <>
+    <section>
       <div className="flex flex-col items-center mt-10">
         <div className="flex justify-center">
           <Image
@@ -140,6 +140,6 @@ export default function MenuTab() {
           setIsOpen={setIsOpen}
         />
       </div>
-    </>
+    </section>
   );
 }

@@ -5,7 +5,7 @@ import WelcomeImage from "@/public/static/images/content/welcome.jpg";
 
 export default function Welcome() {
   return (
-    <div className="mt-5 sm:mt-10 p-5">
+    <section className="mt-5 sm:mt-10 p-5 max-w-5xl mx-auto">
       <div className="flex flex-col md:flex-row justify-center items-center md:items-start">
         <div className="flex-shrink-0">
           <Image
@@ -36,6 +36,6 @@ export default function Welcome() {
           </p>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
