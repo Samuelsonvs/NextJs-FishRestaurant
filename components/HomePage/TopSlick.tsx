@@ -12,7 +12,7 @@ export default function TopSlick() {
   return (
     <section className="relative">
       <Carousel
-        timeout={{ appear: 620, enter: 620, exit: 620 }}
+        timeout={{ appear: 1100, enter: 1100, exit: 50 }}
         interval={4000}
         onChange={(index: number, active: number) => {
           setActiveSlide(index);
