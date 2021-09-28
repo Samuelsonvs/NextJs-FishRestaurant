@@ -1,104 +1,53 @@
 {
   "MobilVersion": [
     {
-      "name": "FacebookSuggestion_1",
-      "src": "/static/images/facebookcomments/mobilSuggestion1.png",
+      "name": "FacebookComment_1",
+      "src": "/static/images/facebookcomments/facebook_comment_1.png",
       "alt": "facebook-suggestion",
       "width": 277,
       "height": 136
     },
     {
-      "name": "FacebookSuggestion_2",
-      "src": "/static/images/facebookcomments/mobilSuggestion2.png",
+      "name": "FacebookComment_2",
+      "src": "/static/images/facebookcomments/facebook_comment_2.png",
       "alt": "facebook-suggestion",
       "width": 264,
       "height": 112
     },
     {
-      "name": "FacebookSuggestion_3",
-      "src": "/static/images/facebookcomments/mobilSuggestion3.png",
+      "name": "FacebookComment_3",
+      "src": "/static/images/facebookcomments/facebook_comment_3.png",
       "alt": "facebook-suggestion",
       "width": 307,
       "height": 178
     },
     {
-      "name": "FacebookSuggestion_4",
-      "src": "/static/images/facebookcomments/mobilSuggestion4.png",
+      "name": "FacebookComment_4",
+      "src": "/static/images/facebookcomments/facebook_comment_4.png",
       "alt": "facebook-suggestion",
       "width": 312,
       "height": 149
     },
     {
       "name": "GoogleComment_1",
-      "src": "/static/images/googlecomments/googlecommentmobil_1.png",
+      "src": "/static/images/googlecomments/google_comment_1.png",
       "alt": "google-comment",
       "width": 346,
       "height": 185
     },
     {
       "name": "GoogleComment_2",
-      "src": "/static/images/googlecomments/googlecommentmobil_2.png",
+      "src": "/static/images/googlecomments/ggoogle_comment_2.png",
       "alt": "google-comment",
       "width": 348,
       "height": 236
     },
     {
       "name": "GoogleComment_3",
-      "src": "/static/images/googlecomments/googlecommentmobil_3.png",
+      "src": "/static/images/googlecomments/google_comment_3.png",
       "alt": "google-comment",
       "width": 319,
       "height": 315
-    }
-  ],
-  "DesktopVersion": [
-    {
-      "name": "FacebookSuggestion_1",
-      "src": "/static/images/facebookcomments/suggestion1.png",
-      "alt": "facebook-suggestion",
-      "width": 526,
-      "height": 92
-    },
-    {
-      "name": "FacebookSuggestion_2",
-      "src": "/static/images/facebookcomments/suggestion2.png",
-      "alt": "facebook-suggestion",
-      "width": 519,
-      "height": 126
-    },
-    {
-      "name": "FacebookSuggestion_3",
-      "src": "/static/images/facebookcomments/suggestion3.png",
-      "alt": "facebook-suggestion",
-      "width": 513,
-      "height": 85
-    },
-    {
-      "name": "FacebookSuggestion_4",
-      "src": "/static/images/facebookcomments/suggestion4.png",
-      "alt": "facebook-suggestion",
-      "width": 492,
-      "height": 84
-    },
-    {
-      "name": "GoogleComment_1",
-      "src": "/static/images/googlecomments/googlecomment_1.png",
-      "alt": "google-comment",
-      "width": 455,
-      "height": 251
-    },
-    {
-      "name": "GoogleComment_2",
-      "src": "/static/images/googlecomments/googlecomment_2.png",
-      "alt": "google-comment",
-      "width": 502,
-      "height": 266
-    },
-    {
-      "name": "GoogleComment_3",
-      "src": "/static/images/googlecomments/googlecomment_3.png",
-      "alt": "google-comment",
-      "width": 499,
-      "height": 170
     }
   ]
 }
