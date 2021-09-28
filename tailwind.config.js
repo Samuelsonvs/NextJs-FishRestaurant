@@ -35,6 +35,10 @@ module.exports = {
         sx: "550px",
         ...defaultTheme.screens,
       },
+      height: {
+        ...defaultTheme.height,
+        "120": "960px"
+      },
       fontFamily: {
         sans: ["Montserrat", ...fontFamily.sans],
         playfair: ["Playfair Display", ...fontFamily.sans],
