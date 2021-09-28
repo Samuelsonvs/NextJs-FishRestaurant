@@ -1,10 +1,32 @@
-import React from "react";
+/* eslint-disable @next/next/no-img-element */
+import React, { useRef } from "react";
 import Image from "next/image";
-import Carousel from "react-material-ui-carousel";
 
 import Comments from "@/data/Comments.json";
+import { useSlider } from "@/hooks/useSlider";
 
 export default function FacebookSlick() {
+  const sliderRef = useRef<HTMLDivElement | null>(null);
+  const { mounted, active } = useSlider(
+    sliderRef,
+    {
+      initial: 0,
+      rubberband: false,
+      loop: true,
+      slidesPerView: 3,
+      breakpoints: {
+        '(max-width: 1200px)': {
+          slidesPerView: 3,
+        },
+        '(min-width: 620px) and (max-width: 1200px)': {
+            slidesPerView: 2,
+        },
+        '(max-width: 620px)': {
+          slidesPerView: 1,
+        },
+      },
+    }
+  )
   return (
     <section className="max-w-screen-3xl text-center mt-20">
       <h2 className="font-playfair text-gray-800 text-3xl leading-10 md:text-5xl lg:text-6xl">
@@ -27,37 +49,15 @@ export default function FacebookSlick() {
           );
         })}
       </div>
-      {Object.values(Comments).map((version, idx) => {
-        return (
-          <div
-            key={idx}
-            className={`${
-              idx === 0 ? "block sx:hidden" : "hidden sx:block py-10"
-            }`}
-          >
-            <Carousel
-              animation="slide"
-              navButtonsAlwaysInvisible={true}
-              reverseEdgeAnimationDirection={false}
-              timeout={{ appear: 800, enter: 800, exit: 800 }}
-              className="mt-10"
-            >
-              {version.map((image, index) => {
-                return (
-                  <div key={index} className="p-5">
-                    <Image
-                      src={image.src}
-                      alt={image.alt}
-                      width={image.width}
-                      height={image.height}
-                    />
-                  </div>
-                );
-              })}
-            </Carousel>
-          </div>
-        );
-      })}
+      <div ref={sliderRef} className="keen-slider mt-10">
+        {Comments.MobilVersion.map((cmnt, idx) => {
+          return (
+            <div key={idx} className="keen-slider__slide">
+              <Image key={idx} src={cmnt.src} priority width={cmnt.width} height={cmnt.height} alt="slider-image" />
+            </div>
+          )
+        })}
+      </div>
     </section>
   );
 }
