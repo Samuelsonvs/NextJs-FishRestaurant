@@ -21,7 +21,7 @@ export default function Navbar({ mounted }: ThemeController): JSX.Element {
   const [navListColor, setNavListColor] = useState("text-gray-200");
   const [navbarChange, setNavbarChange] = useState(false);
 
-  const { width, chanceWidth } = useContext(WidthContext)
+  const { width, chanceWidth } = useContext(WidthContext);
 
   useEffect(() => {
     chanceWidth(window.innerWidth);

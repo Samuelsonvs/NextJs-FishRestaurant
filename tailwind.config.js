@@ -37,7 +37,7 @@ module.exports = {
       },
       height: {
         ...defaultTheme.height,
-        "120": "960px"
+        120: "960px",
       },
       fontFamily: {
         sans: ["Montserrat", ...fontFamily.sans],

@@ -1,4 +1,4 @@
-import { writeFileSync } from 'fs';
+import { writeFileSync } from "fs";
 import { globby } from "globby";
 import prettier from "prettier";
 

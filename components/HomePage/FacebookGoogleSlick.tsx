@@ -7,26 +7,23 @@ import { useSlider } from "@/hooks/useSlider";
 
 export default function FacebookSlick() {
   const sliderRef = useRef<HTMLDivElement | null>(null);
-  const { mounted, active } = useSlider(
-    sliderRef,
-    {
-      initial: 0,
-      rubberband: false,
-      loop: true,
-      slidesPerView: 3,
-      breakpoints: {
-        '(max-width: 1200px)': {
-          slidesPerView: 3,
-        },
-        '(min-width: 620px) and (max-width: 1200px)': {
-            slidesPerView: 2,
-        },
-        '(max-width: 620px)': {
-          slidesPerView: 1,
-        },
+  const { mounted, active } = useSlider(sliderRef, {
+    initial: 0,
+    rubberband: false,
+    loop: true,
+    slidesPerView: 3,
+    breakpoints: {
+      "(max-width: 1200px)": {
+        slidesPerView: 3,
       },
-    }
-  )
+      "(min-width: 620px) and (max-width: 1200px)": {
+        slidesPerView: 2,
+      },
+      "(max-width: 620px)": {
+        slidesPerView: 1,
+      },
+    },
+  });
   return (
     <section className="max-w-screen-3xl text-center mt-20">
       <h2 className="font-playfair text-gray-800 text-3xl leading-10 md:text-5xl lg:text-6xl">
@@ -53,9 +50,16 @@ export default function FacebookSlick() {
         {Comments.MobilVersion.map((cmnt, idx) => {
           return (
             <div key={idx} className="keen-slider__slide">
-              <Image key={idx} src={cmnt.src} priority width={cmnt.width} height={cmnt.height} alt="slider-image" />
+              <Image
+                key={idx}
+                src={cmnt.src}
+                priority
+                width={cmnt.width}
+                height={cmnt.height}
+                alt="slider-image"
+              />
             </div>
-          )
+          );
         })}
       </div>
     </section>
