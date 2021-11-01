@@ -17,7 +17,7 @@
   "dependencies": {
     "@headlessui/react": "^1.4.1",
     "keen-slider": "^5.5.1",
-    "next": "11.1.2",
+    "next": "12.0.2",
     "preact": "^10.5.14",
     "preact-compat": "^3.19.0",
     "prettier": "^2.4.1",
